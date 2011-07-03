@@ -1,0 +1,5 @@
+bin/com/ashokgelal/diagnostics/events/*.class
+bin/com/ashokgelal/diagnostics/events/tests/*.class
+diagnostics.jar
+.project
+.classpath
