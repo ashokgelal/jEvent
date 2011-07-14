@@ -3,7 +3,7 @@ package com.ashokgelal.diagnostics.events;
 import java.util.ArrayList;
 
 public class RegisteredEventHandler<S extends IEventSubscriber<V>, V extends EventArgs>{
-	private ArrayList<S> subscribers;
+	protected ArrayList<S> subscribers;
 	public RegisteredEventHandler(){
 		subscribers = new ArrayList<S>();
 	}

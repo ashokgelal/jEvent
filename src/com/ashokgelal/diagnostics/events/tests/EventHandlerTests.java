@@ -57,6 +57,18 @@ public class EventHandlerTests implements IEventSubscriber<EventArgs> {
 		mocker.FireEventWithPersonInfoEventArgs();
 	}
 	
+	@Test
+	public void EmptyEventArgsRegisteredEvent(){
+		mocker.MyEmptyEvent.subscribe(new IEventSubscriber<EventArgs>() {
+			
+			@Override
+			public void handleEventNotification(Object sender, EventArgs args) {
+				Assert.assertTrue(args.equals(EventArgs.Empty));
+			}
+		});
+		mocker.FireRegisteredEmptyArgs();
+	}
+	
 	private class PersonInfoArgsEventHandler implements IEventSubscriber<PersonInfoEventArgs>{
 		@Override
 		public void handleEventNotification(Object sender, PersonInfoEventArgs args) {
