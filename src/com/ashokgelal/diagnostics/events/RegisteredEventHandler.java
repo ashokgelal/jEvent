@@ -2,22 +2,22 @@ package com.ashokgelal.diagnostics.events;
 
 import java.util.ArrayList;
 
-public class RegisteredEventHandler<S extends IEventSubscriber<V>, V extends EventArgs>{
-	protected ArrayList<S> subscribers;
+public class RegisteredEventHandler<V extends EventArgs>{
+	protected ArrayList<IEventSubscriber<V>> subscribers;
 	public RegisteredEventHandler(){
-		subscribers = new ArrayList<S>();
+		subscribers = new ArrayList<IEventSubscriber<V>>();
 	}
 	
-	public void subscribe(S s){
+	public void subscribe(IEventSubscriber<V> s){
 		subscribers.add(s);
 	}
 	
-	public void unsubscribe(S s){
+	public void unsubscribe(IEventSubscriber<V> s){
 		subscribers.remove(s);
 	}
 	
 	public void raise(Object sender, V args){
-		for (S subscriber : subscribers) {
+		for (IEventSubscriber<V> subscriber : subscribers) {
 			subscriber.handleEventNotification(sender, args);
 		}
 	}
