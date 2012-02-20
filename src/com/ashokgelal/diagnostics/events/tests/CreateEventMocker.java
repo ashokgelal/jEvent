@@ -2,9 +2,9 @@ package com.ashokgelal.diagnostics.events.tests;
 import com.ashokgelal.diagnostics.events.*;
 
 public class CreateEventMocker {
-	public RegisteredEventHandler<EventArgs> MyFakeEvent = new RegisteredEventHandler<EventArgs>();
-	public RegisteredEventHandler<PersonInfoEventArgs> MyPersonInfoEvent = new RegisteredEventHandler<PersonInfoEventArgs>();
-	public RegisteredEmptyArgsEventHandler MyEmptyEvent = new RegisteredEmptyArgsEventHandler();
+	public RegisteredEvent<EventArgs> MyFakeEvent = new RegisteredEvent<EventArgs>();
+	public RegisteredEvent<PersonInfoEventArgs> MyPersonInfoEvent = new RegisteredEvent<PersonInfoEventArgs>();
+	public RegisteredEmptyArgsEvent MyEmptyEvent = new RegisteredEmptyArgsEvent();
 	
 	public void FireEventWithEmptyEventArgs(){
 		MyFakeEvent.raise(this, EventArgs.Empty);

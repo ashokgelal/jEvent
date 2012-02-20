@@ -2,9 +2,9 @@ package com.ashokgelal.diagnostics.events;
 
 import java.util.ArrayList;
 
-public class RegisteredEventHandler<V extends EventArgs>{
+public class RegisteredEvent<V extends EventArgs>{
 	protected ArrayList<IEventSubscriber<V>> subscribers;
-	public RegisteredEventHandler(){
+	public RegisteredEvent(){
 		subscribers = new ArrayList<IEventSubscriber<V>>();
 	}
 	
