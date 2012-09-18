@@ -3,3 +3,4 @@ bin/com/ashokgelal/diagnostics/events/tests/*.class
 .project
 .classpath
 jEvent/target/
+.metadata/
