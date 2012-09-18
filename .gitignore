@@ -1,6 +1,5 @@
-bin/com/ashokgelal/diagnostics/events/*.class
-bin/com/ashokgelal/diagnostics/events/tests/*.class
 .project
 .classpath
-jEvent/target/
+target/
 .metadata/
+.settings/
