@@ -1,6 +1,4 @@
-package com.ashokgelal.diagnostics.events.tests;
-
-import com.ashokgelal.diagnostics.events.EventArgs;
+import com.ashokgelal.jevent.EventArgs;
 
 public class PersonInfoEventArgs extends EventArgs {
 	
