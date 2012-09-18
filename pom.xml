@@ -3,6 +3,10 @@
   <groupId>com.ashokgelal.jevent</groupId>
   <artifactId>jevent-dep</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <configuration>
+      <source>1.6</source>
+      <target>jsr16</target>
+  </configuration>
   <name>jEvent</name>
   <description>Java Events based on Observer design pattern</description>
   <dependencies>
