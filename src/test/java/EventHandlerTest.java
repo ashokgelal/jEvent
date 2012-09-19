@@ -3,9 +3,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ashokgelal.jevent.EmptyArgsEventHandler;
 import com.ashokgelal.jevent.EventArgs;
 import com.ashokgelal.jevent.EventsRegistry;
+import com.ashokgelal.jevent.GenericEventHandler;
 import com.ashokgelal.jevent.IEventSubscriber;
+import com.ashokgelal.jevent.SingleArgsEventHandler;
 import com.ashokgelal.jevent.SubscriptionToken;
 
 public class EventHandlerTest implements IEventSubscriber<EventArgs> {
@@ -161,6 +164,18 @@ public class EventHandlerTest implements IEventSubscriber<EventArgs> {
 		mocker.MyEmptyEvent.unsubscribe(token);
 		mocker.MyEmptyEvent.unsubscribe(token1);
 		mocker.MyFakeEvent.unsubscribe(token2);
+	}
+	
+	@Test
+	public void testDefaultEventNames(){
+		SingleArgsEventHandler<Address> singleEvent = new SingleArgsEventHandler<Address>();
+		Assert.assertEquals("<no name>", singleEvent.getEventName());
+		
+		EmptyArgsEventHandler emptyEvent = new EmptyArgsEventHandler();
+		Assert.assertEquals("<no name>", emptyEvent.getEventName());
+		
+		GenericEventHandler<PersonInfoEventArgs> genericEvent = new GenericEventHandler<PersonInfoEventArgs>();
+		Assert.assertEquals("<no name>", genericEvent.getEventName());
 	}
 	
 	@Override

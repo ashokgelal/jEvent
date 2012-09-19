@@ -9,6 +9,10 @@ public class SingleArgsEventHandler<V> extends GenericEventHandler<SingleEventAr
 	public SingleArgsEventHandler(String name) {
 		super(name);
 	}
+	
+	public SingleArgsEventHandler() {
+		super();
+	}
 
 	public void raise(Object sender, V args){
 		super.raise(sender, new SingleEventArgs<V>(args));

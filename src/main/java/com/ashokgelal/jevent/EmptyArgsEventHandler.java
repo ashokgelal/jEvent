@@ -11,6 +11,10 @@ public class EmptyArgsEventHandler extends GenericEventHandler<EventArgs> {
 		super(name);
 	}
 
+	public EmptyArgsEventHandler() {
+		super();
+	}
+
 	public void raise(Object sender){
 		super.raise(sender, EventArgs.Empty);
 	}
